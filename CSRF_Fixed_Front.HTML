@@ -1,0 +1,9 @@
+<form asp-action="CambiarContraseña" method="post">
+    <input type="hidden" name="__RequestVerificationToken" 
+    value="@Antiforgery.GetTokens(HttpContext).RequestToken">
+    
+    <label for="newPassword">Nueva Contraseña:</label>
+    <input type="password" id="newPassword" name="newPassword" required>
+
+    <button type="submit">Cambiar Contraseña</button>
+</form>

